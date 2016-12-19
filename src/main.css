@@ -1,1 +1,97 @@
-main.css
+h1 {
+  background-color: silver;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  background-color: black;
+}
+
+table {
+  float: left;
+  background-color: black;
+  border-collapse: collapse;
+}
+
+
+td {
+  width: 125px;
+  background-color: transparent;
+  font-size: 5px;
+  color: silver;
+  text-align: center;
+}
+
+td img {
+  border-style: solid;
+  border-color: silver;
+  border-radius: 15px;
+}
+
+.row {
+  -webkit-perspective: 750px;
+  perspective: 750px;
+}
+
+.question-button {
+  background-color: darkred;
+  color: white;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 20px;
+}
+
+
+.question-button:hover, .question-button:focus {
+  background-color: darkblue;
+}
+
+
+#question-input {
+  font-size: 15px;
+  padding: 15px 90px 15px 90px;
+  border: none;
+  border-radius: 20px;
+}
+
+.dropdown, .people-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.question-content, .people-dropdown-content {
+  display: none;
+  position: relative;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+
+.question-content li, .people-dropdown-content li {
+  color: black;
+  padding: 12px 16px;
+  margin-left: -45px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.dropdown li:hover, .people-dropdown li:hover {background-color: #ddd}
+
+.show {display:block;}
+
+.square {
+  opacity: 1;
+  -webkit-transform: rotateX(30deg);
+  transform: rotateX(30deg);
+}
+
+
+
+

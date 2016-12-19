@@ -1,29 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Guess Who&#63;</title>
-<meta charset="UTF-8">
-<script src="src/jquery-3.1.1.js"></script>
-<script src="src/classPerson.js"></script>
-<script src="src/classBoard.js"></script>
-<script src="src/app.js"></script>
-
-<style type="text/css"></style>
+  <title>Guess Who - Hip Hop Version</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="src/main.css">
+  <script src="src/jquery-3.1.1.js"></script>
+  <script src="src/classPerson.js"></script>
+  <script src="src/classBoard.js"></script>
+  <script src="src/classGame.js"></script>
+  <script src="src/app.js"></script>
 </head>
-<h2>Guess Who&#63;</h2>
 <body>
-<table border="4">
+  <h1>GUESS WHO: HIP HOP EDITION</h1>
+  <div class="table-container">
+  <table border="0">
+    <tr class="row">
+      <td><img id="square1" class= "square" src="" width="100px" height="120px"></img>Jay-Z</td>
+      <td><img id="square2" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square3" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square4" class= "square" src="" width="100px" height="120px"> </img></td>
+      <td><img id="square5" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square6" class= "square" src="" width="100px" height="120px"> </img></td>
+    </tr>
+    <tr class="row">
+      <td><img id="square7" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square8" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square9" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square10" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square11" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square12" class= "square" src="" width="100px" height="120px"></img></td>
+    </tr>
+    <tr class="row">
+      <td><img id="square13" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square14" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square15" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square16" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square17" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square18" class= "square" src="" width="100px" height="120px"></img></td>
+    </tr>
+    <tr class="row">
+      <td><img id="square19" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square20" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square21" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square22" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square23" class= "square" src="" width="100px" height="120px"></img></td>
+      <td><img id="square24" class= "square" src="" width="100px" height="120px"></img></td>
+    </tr>
+  </table>
+    </div>
 
-  <tr class="row">
-    <td><img id="square1" src="images/Jason.jpg" width="50px" height="50px"></td>
-    <td><img id="square2" src="images/Alice.jpg" width="50px" height="50px"></td>
-  </tr>
 
-  <tr class="row">
-    <td><img id="square3" src="images/Donovan.jpg" width="50px" height="50px"></td>
-    <td><img id="square4" src="images/Leslie.jpg" width="50px" height="50px"></td>
-  </tr>
 
-</table>
+
+  <center>
+  <div class="dropdown">
+    <button id="question-button" class="question-button">Questions</button>
+      <div id="question-dropdown" class="question-content">
+        <input type="text" placeholder="Search questions" id="question-input">
+          <ul>
+            <li id="dropdown1" class="js-dropdown"></li>
+            <li id="dropdown2" class="js-dropdown"></li>
+            <li id="dropdown3" class="js-dropdown"></li>
+            <li id="dropdown4" class="js-dropdown"></li>
+            <li id="dropdown5" class="js-dropdown"></li>
+            <li id="dropdown6" class="js-dropdown"></li>
+            <li id="dropdown7" class="js-dropdown"></li>
+            <li id="dropdown8" class="js-dropdown"></li>
+            <li id="dropdown9" class="js-dropdown"></li>
+            <li id="dropdown10" class="js-dropdown"></li>
+            <li id="dropdown11" class="js-dropdown"></li>
+            <li id="dropdown12" class="js-dropdown"></li>
+            <li id="dropdown13" class="js-dropdown"></li>
+            <li id="dropdown14" class="js-dropdown"></li>
+            <li id="dropdown15" class="js-dropdown"></li>
+            <li id="dropdown16" class="js-dropdown"></li>
+            <li id="dropdown17" class="js-dropdown"></li>
+            <li id="dropdown18" class="js-dropdown"></li>
+            <li id="dropdown19" class="js-dropdown"></li>
+            <li id="dropdown20" class="js-dropdown"></li>
+          </ul>
+      </div>
+    </div>
+    </center>
+
+    <div class="people-dropdown">
+    <input type="text" placeholder="Make your guess" id="myPerson">
+      <ul class="people-dropdown-content">
+      </ul>
+  </div>
+
+
 </body>
 </html>

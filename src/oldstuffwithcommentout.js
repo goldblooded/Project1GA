@@ -1,6 +1,6 @@
-console.log('game.js is connected');
 
-const questions = [
+
+let questions = [
   {
     question: 'Are they bald?',
     targetAttribute: 'hairType',
@@ -100,32 +100,33 @@ const questions = [
     question: 'Are they in black and white?',
     targetAttribute: 'black and white',
     targetValue: true,
+  },
+  {
+    question: 'Does their name refer to currency?',
+    targetAttribute: 'currency',
+    targetValue: true,
   }
 ];
 
-
+// https://learn.jquery.com/using-jquery-core/document-ready/
 $(document).ready(function() {
   assignIdsToQuestions();
   initDropdowns();
-  initAnswerInputForm();
-  console.log(JSON.stringify(questions, null, 2));
   let game = new Game();
   game.drawCard();
   console.log(JSON.stringify(game.selectedPerson, null, 2));
 });
-
-
 
 function dropdownHandler() {
     $('#question-dropdown').toggle("show");
 }
 
 
-function questionFilterFunction() {
+function filterFunction() {
   let input, filter, ul, li, a, i;
   filter = $('#question-input').val().toUpperCase();
   li = $('#question-dropdown li');
-  for (let i = 0; i < li.length; i++) {
+  for (i = 0; i < li.length; i++) {
     if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
     } else {
@@ -134,23 +135,11 @@ function questionFilterFunction() {
   }
 }
 
-function peopleFilterFunction() {
-  let filter = $('#myPerson').val().toUpperCase();
-  let li = $('.people-dropdown-content li');
-
-  for (let i = 0; i < li.length; i++) {
-    if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
 
 function initDropdowns() {
   $('#question-button').on('click', dropdownHandler);
-  $('#question-input').on('keyup',questionFilterFunction);
-  $('#myPerson').on('keyup',peopleFilterFunction);
+  $('#question-input').on('keyup', filterFunction);
+
 }
 
 
@@ -160,15 +149,32 @@ function assignIdsToQuestions() {
   }
 }
 
+// function assignIdsToPeople() {
+//   for(let i = 0; i < persons.length, i++) {
 
-function initAnswerInputForm() {
-  for (let i =  0; i < persons.length; i++) {
-    let person = (persons[i]);
-    let name = person.name;
-    $('.people-dropdown-content').append('<li class=\"js-answer\">' + name + '</li>');
+//   }
+// }
+
+
+
+
+
+class Person {
+  constructor(person) {
+    // this.name = person.name;
+    // this.hairType = person.hairType;
+    // this.age = person.age;
+    // this.glasses = person.glasses;
+    // this.gender = person.gender;
+    // this.image = person.image;
+    this.eliminated = false;
+    for(let attribute in person) {
+      this[attribute] = person[attribute];
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+    }
   }
+};
 
-  $('#myPerson').on('click', function() {
-    $('.people-dropdown-content').toggle('show');
-  });
-}
+
+
+

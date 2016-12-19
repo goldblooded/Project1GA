@@ -18,8 +18,8 @@ class Game {
   drawCard() {
     let tiles = this.board.tiles;
     let nPersons = tiles.length;
-    let selectedIdx = Math.floor((Math.random()*100)) % nPersons;
-    this.selectedPerson = tiles[selectedIdx];
+    let selectedIndex = Math.floor((Math.random()*100)) % nPersons;
+    this.selectedPerson = tiles[selectedIndex];
   }
 
   // when the player has clicked on a question from the questions dropdown

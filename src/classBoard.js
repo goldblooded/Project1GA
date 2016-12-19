@@ -7,6 +7,7 @@ class Board {
     //    * creating a new Person object and putting it into the tiles array
     //    * setting the src attribute on the img tag to show the picture
     //    * setting up a click handler for each tile so that clicking on a tile will toggle its opacity
+    //stackoverflow.com/questions/20516294/set-elements-id-in-a-for-loop
     for (let i = 0; i < persons.length; i++) {
       let selector = "#square" + (i+1);
       let person = new Person(persons[i], selector);
@@ -28,6 +29,7 @@ class Board {
     }
   }
 
+  // eliminatePerson just toggles the css opacity on a tile
   eliminatePerson() {
     let id = this.id;
     let selector = '#' + id;

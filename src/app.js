@@ -113,6 +113,7 @@ $(document).ready(function() {
   //randomly select a rapper who the user will have to guess
   game.drawCard();
 });
+console.log();
 
 //api.jquery.com/toggle/
 // dropdownHandler will display the questions dropdown on first click

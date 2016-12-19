@@ -73,7 +73,7 @@ class Game {
   // check if the chosed rapper's name is the same as the mystery rapper's name
   initCheckWin() {
     let self = this;
-
+//stackoverflow.com/questions/337878/var-self-this
     $('.js-answer').each(function() {
       let name = $(this).text();
       $(this).on('click', function() {
@@ -88,7 +88,7 @@ class Game {
 
   }
 
-  // given an id (HTML id that is), return the corresponding question object
+  // given an id (HTML), return the corresponding question object
   getQuestionById(id) {
     for (let i = 0; i < questions.length; i++) {
       if ((questions[i]).id === id) {

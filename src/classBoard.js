@@ -3,7 +3,10 @@ console.log('classBoard.js is connected');
 class Board {
   constructor() {
     this.tiles = [];
-
+    // initializes the tiles on the board by:
+    //    * creating a new Person object and putting it into the tiles array
+    //    * setting the src attribute on the img tag to show the picture
+    //    * setting up a click handler for each tile so that clicking on a tile will toggle its opacity
     for (let i = 0; i < persons.length; i++) {
       let selector = "#square" + (i+1);
       let person = new Person(persons[i], selector);
@@ -14,6 +17,7 @@ class Board {
     }
   }
 
+  // given a rapper's name, get the person object corresponding to that name
   getPersonByName(name) {
     let tiles = this.tiles;
     for (let i = 0; i < tiles.length; i++) {

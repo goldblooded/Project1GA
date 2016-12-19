@@ -2,6 +2,7 @@ h1 {
   background-color: silver;
 }
 
+
 ul {
   list-style-type: none;
 }
@@ -13,16 +14,17 @@ body {
 table {
   float: left;
   background-color: black;
-  border-collapse: collapse;
+  /*border-collapse: collapse;*/
 }
-
 
 td {
   width: 125px;
   background-color: transparent;
-  font-size: 5px;
+  font-size: 8px;
   color: silver;
   text-align: center;
+  border-color: silver;
+  border-style: solid;
 }
 
 td img {
@@ -39,7 +41,9 @@ td img {
 .question-button {
   background-color: darkred;
   color: white;
-  padding: 15px;
+  margin-left: 5px;
+  margin-top: 50px;
+  /*padding: 15px;*/
   font-size: 15px;
   border-radius: 20px;
 }
@@ -72,6 +76,10 @@ td img {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
+.people-dropdown {
+  margin-top: 120px;
+  margin-left: 170px;
+}
 
 .question-content li, .people-dropdown-content li {
   color: black;
@@ -88,8 +96,8 @@ td img {
 
 .square {
   opacity: 1;
-  -webkit-transform: rotateX(30deg);
-  transform: rotateX(30deg);
+  -webkit-transform: rotateX(20deg);
+  transform: rotateX(20deg);
 }
 
 

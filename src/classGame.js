@@ -2,13 +2,18 @@ console.log('classGame.js is connected');
 
 class Game {
   constructor() {
-    this.board = new Board();
-    this.questionsRemaining = 5;
-    this.selectedPerson = null;
+    this.board = new Board();    // initialize the game board
+    this.questionsRemaining = 5; // player has 5 chances/questions when game starts
+    this.selectedPerson = null;  // this will be the mystery rapper and be initialized in app.js with a call to drawCard()
 
     this.initQuestionHandlers();
     this.initCheckWin();
   }
+
+  // drawCard will randomly select a rapper by computing a random
+  // integer and then using that to index into the tiles array of the
+  // Board class to set this.selectedPerson which represents rapper that
+  // the user/player has to guess
 
   drawCard() {
     let tiles = this.board.tiles;
@@ -17,6 +22,8 @@ class Game {
     this.selectedPerson = tiles[selectedIdx];
   }
 
+  // when the player has clicked on a question from the questions dropdown
+  // the click handler will call this function to answer the selected question.
   answerQuestion(question) {
     let targetAttribute = question.targetAttribute;
     let targetValue = question.targetValue;
@@ -24,20 +31,25 @@ class Game {
 
     this.questionsRemaining--;
 
+  // if the player has no more questions,  then they lost
     if (this.questionsRemaining === 0) {
       alert('YOU LOST');
       window.location.reload();
     }
     else {
+      // if this.selectedPerson has the target value for the target attribute, then answer is YES
+      // otherwise, NO
       if (selectedPerson[targetAttribute] && selectedPerson[targetAttribute] === targetValue) {
-        alert('YES - YOU HAVE ' + this.questionsRemaining + ' Guesses Remaining');
+        alert('YES - YOU HAVE ' + this.questionsRemaining + ' Questions Remaining');
       }
       else {
-        alert('NO - YOU HAVE ' + this.questionsRemaining + ' Guesses Remaining');
+        alert('NO - YOU HAVE ' + this.questionsRemaining + ' Questions Remaining');
       }
     }
   }
 
+  // setup click handlers for each question in the dropdown list so that when the player clicks it,
+  // a call to the function answerQuestion is made to answer whatever question was clicked
   initQuestionHandlers() {
     let self = this;
 
@@ -56,6 +68,9 @@ class Game {
     });
   }
 
+  // the player only gets one shot to declare who the mystery rapper is
+  // so when the player clicks on a rapper from the rappers dropdown,
+  // check if the chosed rapper's name is the same as the mystery rapper's name
   initCheckWin() {
     let self = this;
 
@@ -73,7 +88,7 @@ class Game {
 
   }
 
-
+  // given an id (HTML id that is), return the corresponding question object
   getQuestionById(id) {
     for (let i = 0; i < questions.length; i++) {
       if ((questions[i]).id === id) {

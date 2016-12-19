@@ -103,28 +103,35 @@ const questions = [
   }
 ];
 
-
+ //creates new Game
+ //learn.jquery.com/using-jquery-core/document-ready/
 $(document).ready(function() {
   assignIdsToQuestions();
   initDropdowns();
   initAnswerInputForm();
-  console.log(JSON.stringify(questions, null, 2));
   let game = new Game();
+  //randomly select a rapper who the user will have to guess
   game.drawCard();
-  console.log(JSON.stringify(game.selectedPerson, null, 2));
 });
 
-
-
+//api.jquery.com/toggle/
+// dropdownHandler will display the questions dropdown on first click
+// and hide it on second click
 function dropdownHandler() {
     $('#question-dropdown').toggle("show");
 }
 
-
+//stackoverflow.com/questions/2813166/help-with-this-val-touppercase
+// questionFilterFunction gets the user input from the input box and
+// searches through the list of items in the dropdown for all matches
 function questionFilterFunction() {
-  let input, filter, ul, li, a, i;
-  filter = $('#question-input').val().toUpperCase();
-  li = $('#question-dropdown li');
+  // targets the input box and gets the text the user entered and change it to uppercase
+  let filter = $('#question-input').val().toUpperCase();
+    // loop through the questions in the dropdown and see if anything
+  // matches the text the user entered
+  // if we have any matches, then show the matched question
+  // otherwise dont show anything
+  let li = $('#question-dropdown li');
   for (let i = 0; i < li.length; i++) {
     if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
@@ -134,10 +141,13 @@ function questionFilterFunction() {
   }
 }
 
+
+// peopleFilterFunction implements the same logic as question filter
+// function EXCEPT that now we try to match the user's input against
+// the list of rappers
 function peopleFilterFunction() {
   let filter = $('#myPerson').val().toUpperCase();
   let li = $('.people-dropdown-content li');
-
   for (let i = 0; i < li.length; i++) {
     if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
@@ -147,6 +157,10 @@ function peopleFilterFunction() {
   }
 }
 
+// Sets up the following event handlers:
+//  * for the question button: on click show questions dropdown  by calling dropdownHandler
+//  * for the search question input: on keyup filter through dropdowns depending on what the user has entered into the input by calling questionFilterFunction
+//  * for the make guess input: on keyup filter through list of rappers depending on what text the user has entered so far
 function initDropdowns() {
   $('#question-button').on('click', dropdownHandler);
   $('#question-input').on('keyup',questionFilterFunction);
@@ -154,13 +168,16 @@ function initDropdowns() {
 }
 
 
+// loop through questions array and add an id attribute so that we can
+// associate that id with the respective id in the HTML
 function assignIdsToQuestions() {
   for (let i = 0; i < questions.length; i++) {
     (questions[i]).id = '#dropdown' + (i+1);
   }
 }
 
-
+// populate the list of rappers for the make guess dropdown and setup a
+// click handler so that clicking on the input box shows full dropdown list
 function initAnswerInputForm() {
   for (let i =  0; i < persons.length; i++) {
     let person = (persons[i]);

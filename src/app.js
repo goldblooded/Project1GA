@@ -1,4 +1,4 @@
-console.log('game.js is connected');
+console.log('app dot js is now connected')
 
 const questions = [
   {
@@ -103,32 +103,37 @@ const questions = [
   }
 ];
 
- //creates new Game
- //learn.jquery.com/using-jquery-core/document-ready/
+
 $(document).ready(function() {
   assignIdsToQuestions();
   initDropdowns();
   initAnswerInputForm();
+  console.log(JSON.stringify(questions, null, 2));
+
+  //creates new Game
   let game = new Game();
+
   //randomly select a rapper who the user will have to guess
   game.drawCard();
-  console.log();
+  console.log(JSON.stringify(game.selectedPerson, null, 2));
 });
 
-//api.jquery.com/toggle/
+
 // dropdownHandler will display the questions dropdown on first click
 // and hide it on second click
 function dropdownHandler() {
     $('#question-dropdown').toggle("show");
 }
 
-//stackoverflow.com/questions/2813166/help-with-this-val-touppercase
+
 // questionFilterFunction gets the user input from the input box and
 // searches through the list of items in the dropdown for all matches
 function questionFilterFunction() {
-  // targets the input box and gets the text the user entered and change it to uppercase
+  // targets the input box and get the text the user entered and change it to uppercase
   let filter = $('#question-input').val().toUpperCase();
-    // loop through the questions in the dropdown and see if anything
+
+
+  // loop through the questions in the dropdown and see if anything
   // matches the text the user entered
   // if we have any matches, then show the matched question
   // otherwise dont show anything
@@ -149,6 +154,7 @@ function questionFilterFunction() {
 function peopleFilterFunction() {
   let filter = $('#myPerson').val().toUpperCase();
   let li = $('.people-dropdown-content li');
+
   for (let i = 0; i < li.length; i++) {
     if (li[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
       li[i].style.display = "";
@@ -164,11 +170,9 @@ function peopleFilterFunction() {
 //  * for the make guess input: on keyup filter through list of rappers depending on what text the user has entered so far
 function initDropdowns() {
   $('#question-button').on('click', dropdownHandler);
-  $('#question-input').on('keyup',questionFilterFunction);
-  $('#myPerson').on('keyup',peopleFilterFunction);
-//stackoverflow.com/questions/19022396/drop-down-to-set-initialize-value-using-jquery
-// other resources used for initializing clickhanders but cannot find them at the moment!
-
+  $('#question-input').on('keyup', questionFilterFunction);
+  $('#myPerson').on('keyup', peopleFilterFunction);
+}
 
 // loop through questions array and add an id attribute so that we can
 // associate that id with the respective id in the HTML
@@ -191,3 +195,4 @@ function initAnswerInputForm() {
     $('.people-dropdown-content').toggle('show');
   });
 }
+

@@ -1,5 +1,5 @@
 # Project1GA
-Game
+https://github.com/goldblooded/Project1GA
 
 Language/tech used: 
 Vanilla JS, jQuery, CSS, HTML
@@ -11,4 +11,4 @@ Lessons learned:
 Many. The positives: click handlers are great for board games that need several compenents. jQuery reduces work and coding errors. Hard lessons: don't change topics.. think and plan out what is feasible given the time constraints and personal knowledge and comfort. Don't neglect styling for the sake of logic/coding and wait until the last minute. I am a very visual person so coding and then viewing the physical page would have allowed me to to get my thoughts and ideas together more effectively. I did a few things to make the coding more flexible, i.e. iterating over an array to assign id's to empty id strings. Also, not using inheritance with classes to generate new instances of class objects because I wanted flexibility with number of objects and number of attributes. 
 
 Improvements:
-Many.
+Many. Time efficiency, understanding/foreseeing what limitations I might have.

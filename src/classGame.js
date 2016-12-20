@@ -3,7 +3,7 @@ console.log('classGame.js is connected');
 class Game {
   constructor() {
     this.board = new Board();    // initialize the game board
-    this.questionsRemaining = 5; // player has 5 chances/questions when game starts
+    this.questionsRemaining = 6; // player has 5 chances/questions when game starts
     this.selectedPerson = null;  // this will be the mystery rapper and be initialized in app.js with a call to drawCard()
 
     this.initQuestionHandlers();

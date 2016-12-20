@@ -166,7 +166,8 @@ function initDropdowns() {
   $('#question-button').on('click', dropdownHandler);
   $('#question-input').on('keyup',questionFilterFunction);
   $('#myPerson').on('keyup',peopleFilterFunction);
-}
+//stackoverflow.com/questions/19022396/drop-down-to-set-initialize-value-using-jquery
+// other resources used for initializing clickhanders but cannot find them at the moment!
 
 
 // loop through questions array and add an id attribute so that we can
